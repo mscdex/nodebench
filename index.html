@@ -300,7 +300,11 @@
 
                 $('#runtime-total').text(totalDiff).attr('class', (totalDiff[0] === '+' ? 'diff-neg' : 'diff-pos'));
                 $('#runtimes').find('thead th:nth-child(2)').text('Difference');
-                $('#runtimes-title').html('Run-time differences from ' + $oldRow.find('td:nth-child(2)').html() + ' to ' + $newRow.find('td:nth-child(2)').html());
+                var $oldHash = $oldRow.find('td:nth-child(2)');
+                var $newHash = $newRow.find('td:nth-child(2)');
+                var compareLink = 'https://github.com/nodejs/node/compare/'
+                                  + $oldHash.text() + '...' + $newHash.text();
+                $('#runtimes-title').html('Run-time differences from ' + $oldHash.html() + ' <a href="' + compareLink + '" target="_blank">to</a> ' + $newHash.html());
                 dtRuntimes.clear().rows.add(diffs).draw();
 
                 $('#runtimes-section').show();
@@ -327,7 +331,11 @@
                   if (err)
                     return alert(err.message);
 
-                  $('#results-title').html('Results from ' + $oldRow.find('td:nth-child(2)').html() + ' to ' + $newRow.find('td:nth-child(2)').html());
+                  var $oldHash = $oldRow.find('td:nth-child(2)');
+                  var $newHash = $newRow.find('td:nth-child(2)');
+                  var compareLink = 'https://github.com/nodejs/node/compare/'
+                                    + $oldHash.text() + '...' + $newHash.text();
+                  $('#results-title').html('Results from ' + $oldHash.html() + ' <a href="' + compareLink + '" target="_blank">to</a> ' + $newHash.html());
                   dtResultsCompare.clear();
                   var rows = dtResultsCompare.rows;
                   for (var i = 0; i < results.length; ++i)
@@ -349,7 +357,11 @@
                 if (err)
                   return alert(err.message);
 
-                $('#results-title').html('Results for <code>' + selectedItem + '</code> from ' + $oldRow.find('td:nth-child(2)').html() + ' to ' + $newRow.find('td:nth-child(2)').html());
+                var $oldHash = $oldRow.find('td:nth-child(2)');
+                var $newHash = $newRow.find('td:nth-child(2)');
+                var compareLink = 'https://github.com/nodejs/node/compare/'
+                                  + $oldHash.text() + '...' + $newHash.text();
+                $('#results-title').html('Results for <code>' + selectedItem + '</code> from ' + $oldHash.html() + ' <a href="' + compareLink + '" target="_blank">to</a> ' + $newHash.html());
                 dtResultsCompare.clear().rows.add(results).draw();
 
                 $('#runtimes-section').hide();
