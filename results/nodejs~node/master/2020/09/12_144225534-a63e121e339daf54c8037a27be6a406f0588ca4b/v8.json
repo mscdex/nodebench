@@ -1,0 +1,1 @@
+{"get-stats":{"method=\"getHeapStatistics\" n=1000000":{"mean":2117741.137588795,"sqsum":384107101406.6332,"variance":13245072462.297695,"size":30},"method=\"getHeapSpaceStatistics\" n=1000000":{"mean":807029.797563779,"sqsum":20575750909.30573,"variance":709508652.0450251,"size":30}}}
