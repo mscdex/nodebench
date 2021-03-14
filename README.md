@@ -6,16 +6,19 @@ This repository consists of two parts:
     are collected daily
   * A web UI to consume the data
 
+# Hardware
+
+* Diskless (PXE boot and ran entirely from RAM)
+* From the beginning (2020-02-03) through 2021-03-11: Core i7-860 with 16GB
+  DDR3-1600 RAM running Debian Buster (10.x)
+* From 2021-03-13 to current: Core i5-8500T with 40GB DDR4-2666 RAM running
+  Debian Buster (10.x)
+
 # Background
 
 I wanted to set up an automated process that would continuously run node.js'
 benchmarks so as to help catch (unintended) performance regressions as
 (reasonably) quickly as possible.
-
-I had an old Core i7 machine laying around that I thought would work well for
-the job, so I maxed out the RAM in it and built a minimal, customized version of
-Debian that it could boot from over the network and run completely from RAM in
-isolation.
 
 As of this writing, a few benchmark categories are missing because they either
 take way too long to complete or they don't make much sense to run in the
